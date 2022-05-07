@@ -1,16 +1,22 @@
-import { login } from '@/api/sys'
+import { login, getUserInfo } from '@/api/sys'
 import md5 from 'md5'
 import { setItem, getItem } from '@/utils/storage'
 import { TOKEN } from '@/constant'
 export default {
   namespaced: true,
   state: () => ({
-    token: getItem(TOKEN) || ''
+    token: getItem(TOKEN) || '',
+    // 增加
+    userInfo: {}
   }),
   mutations: {
     setToken(state, token) {
       state.token = token
       setItem(TOKEN, token)
+    },
+    // 增加
+    setUserInfo(state, userInfo) {
+      state.userInfo = userInfo
     }
   },
   actions: {
@@ -32,6 +38,13 @@ export default {
             reject(err)
           })
       })
+    },
+    // 增加
+    async getUserInfo(context) {
+      const res = await getUserInfo()
+      console.log(res)
+      this.commit('user/setUserInfo', res)
+      return res
     }
   }
 }
