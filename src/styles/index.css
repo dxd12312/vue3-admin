@@ -1,6 +1,6 @@
 :export {
   menuText: #bfcbd9;
-  menuActiveText: #ffffff;
+  menuActiveText: #49aeed;
   subMenuActiveText: #f4f4f5;
   menuBg: #304156;
   menuHover: #263445;
@@ -11,7 +11,7 @@
 
 :export {
   menuText: #bfcbd9;
-  menuActiveText: #ffffff;
+  menuActiveText: #49aeed;
   subMenuActiveText: #f4f4f5;
   menuBg: #304156;
   menuHover: #263445;
@@ -181,4 +181,8 @@
 .el-menu--vertical > .el-menu--popup::-webkit-scrollbar-thumb {
   background: #99a9bf;
   border-radius: 20px;
+}
+
+.el-avatar {
+  --el-avatar-background-color: none;
 }

@@ -1,9 +1,8 @@
 @import './variables.module.scss';
-
 #app {
   .main-container {
     min-height: 100%;
-    transition: margin-left 0.28s;
+    transition: margin-left #{$sideBarDuration};
     margin-left: $sideBarWidth;
     position: relative;
   }
@@ -16,7 +15,7 @@
     width: $sideBarWidth !important;
     height: 100%;
     background-color: $menuBg;
-    transition: width 0.28s;
+    transition: width #{$sideBarDuration};
     z-index: 1001;
     overflow: hidden;
 
