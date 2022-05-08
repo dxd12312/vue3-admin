@@ -5,3 +5,8 @@ export const getFeature = () => {
     url: '/user/feature'
   })
 }
+export const getChapter = () => {
+  return request({
+    url: '/user/chapter'
+  })
+}
