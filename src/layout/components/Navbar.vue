@@ -3,8 +3,9 @@
     <hamburger class="hamburger-container" />
     <breadcrumb class="breadcrumb-container" />
     <div class="right-menu">
+      <header-search class="right-menu-item hover-effect" />
+      <theme-picker class="right-menu-item hover-effect" />
       <lang-select class="right-menu-item hover-effect" />
-      <theme-picker class="right-menu-item hover-effect"></theme-picker>
       <screenfull class="right-menu-item hover-effect" />
       <!-- 头像 -->
       <el-dropdown class="avatar-container" trigger="click">
@@ -45,6 +46,7 @@ import { useRoute } from 'vue-router'
 import LangSelect from '@/components/LangSelect'
 import ThemePicker from '@/components/ThemeSelect/index'
 import Screenfull from '@/components/Screenfull'
+import HeaderSearch from '@/components/HeaderSearch'
 
 const route = useRoute()
 // 生成数组数据
