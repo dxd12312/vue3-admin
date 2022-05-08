@@ -3,6 +3,7 @@
     <hamburger class="hamburger-container" />
     <breadcrumb class="breadcrumb-container" />
     <div class="right-menu">
+      <lang-select class="right-menu-item hover-effect" />
       <!-- 头像 -->
       <el-dropdown class="avatar-container" trigger="click">
         <div class="avatar-wrapper">
@@ -39,13 +40,14 @@ import Hamburger from '@/components/Hamburger'
 import Breadcrumb from '@/components/Breadcrumb'
 import { ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
+import LangSelect from '@/components/LangSelect'
 
 const route = useRoute()
 // 生成数组数据
 const breadcrumbData = ref([])
 const getBreadcrumbData = () => {
   breadcrumbData.value = route.matched.filter(
-    item => item.meta && item.meta.title
+    (item) => item.meta && item.meta.title
   )
   console.log(breadcrumbData.value)
 }
@@ -96,6 +98,19 @@ const logout = () => {
     align-items: center;
     float: right;
     padding-right: 16px;
+
+    ::v-deep(.right-menu-item) {
+      display: inline-block;
+      padding: 0 18px 0 0;
+      font-size: 24px;
+      color: #5a5e66;
+      vertical-align: text-bottom;
+      margin-left: 8px;
+
+      &.hover-effect {
+        cursor: pointer;
+      }
+    }
 
     ::v-deep(avatar-container) {
       cursor: pointer;
