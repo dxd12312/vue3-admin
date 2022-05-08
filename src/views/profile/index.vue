@@ -31,10 +31,14 @@ import Author from './components/Author.vue'
 import { ref } from 'vue'
 import { getFeature } from '@/api/user'
 
+import { watchSwitchLang } from '@/utils/i18n'
+
 const featureData = ref([])
 const getFeatureData = async () => {
   featureData.value = await getFeature()
 }
+// 监听语言切换
+watchSwitchLang(getFeatureData)
 getFeatureData()
 </script>
 
