@@ -2,11 +2,14 @@
  <router-view />
 </template>
 
-<script>
+<script setup>
+import { useStore } from 'vuex'
+import { generateNewStyle, writeNewStyle } from '@/utils/theme'
 
-export default {
-  name: 'App'
-}
+const store = useStore()
+generateNewStyle(store.getters.mainColor).then(newStyleText => {
+  writeNewStyle(newStyleText)
+})
 </script>
 
 <style>
