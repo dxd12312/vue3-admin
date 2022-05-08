@@ -1,21 +1,25 @@
 import { createI18n } from 'vue-i18n'
+import mZhLocale from './lang/zh'
+import mEnLocale from './lang/en'
 
 // 创建 message 数据源
 const messages = {
   en: {
     msg: {
-      test: 'hello world'
+      test: 'hello world',
+      mEnLocale
     }
   },
   zh: {
     msg: {
-      test: '你好世界'
+      test: '你好世界',
+      mZhLocale
     }
   }
 }
 
 // 创建 locale 语言变量
-const locale = 'zh'
+const locale = ''
 
 // 初始化 i18n 实例
 const i18n = createI18n({
