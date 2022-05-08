@@ -6,20 +6,18 @@ import mEnLocale from './lang/en'
 const messages = {
   en: {
     msg: {
-      test: 'hello world',
-      mEnLocale
+      ...mEnLocale
     }
   },
   zh: {
     msg: {
-      test: '你好世界',
-      mZhLocale
+      ...mZhLocale
     }
   }
 }
 
 // 创建 locale 语言变量
-const locale = ''
+const locale = 'en'
 
 // 初始化 i18n 实例
 const i18n = createI18n({
