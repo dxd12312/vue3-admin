@@ -17,8 +17,11 @@ import i18n from '@/i18n'
 // filter
 import installFilter from '@/filter'
 
+import installDirective from '@/directives'
+
 const app = createApp(App)
 installElementPlus(app)
 installIcons(app)
 installFilter(app)
+installDirective(app)
 app.use(store).use(router).use(i18n).mount('#app')
